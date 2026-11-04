@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Methods</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//        ### Number methods 
+//    - Number.toPrecision()
+//    - Number.toFixed()
+//    - Number.parseInt()
+//    - Number.parseFloat()
+//    - Number.isInteger()
+//    - Number.isInfinite()
+//    - Number.isNaN()
+
+    let number = 5.1266;
+
+    // number methods
+
+    console.log(5.1266.toFixed(3)) // 5.127
+    
+    console.log(5.1266.toPrecision(3)) // 5.13
+
+    console.log(typeof number2); // number
+    // console.log(typeof number2.toFixed(3)); // string
+
+    // console.log(number2.toPrecision(3)); // 
+    
+    console.log(Number.parseInt('12.345'));
+    console.log(Number.parseInt('12.9')); // 12
+    console.log(Number.parseInt('124567abc')); // 1234567
+    console.log(Number.parseInt('16abc456')); // 16
+    console.log(Number.parseInt('abc456')); // NaN
+
+    console.log(parseInt(12.345));
+    console.log(parseInt(12.9)); // 12
+    console.log(parseInt('124567abc')); // 1234567
+    console.log(parseInt('16abc456')); // 16
+    console.log(parseInt('abc456')); // NaN
+
+
+
+    // parseFloat()
+    console.log(parseFloat('123')); // 123
+    console.log(parseFloat(123)); // 123
+
+    console.log(parseFloat(12.345)); // 12.345
+    console.log(parseFloat('12.345')); // 12.345
+
+    console.log(parseFloat('1245.67abc')); // 12345.67
+    console.log(parseFloat('16abc456')); // 16
+    console.log(parseFloat('abc456')); // NaN
+
+    
+   
+   console.log(Number.isInteger(12.56)); // false
+   console.log(Number.isInteger(120)); // true
+
+   console.log(Number.isFinite(Infinity)) // false
+   console.log(Number.isFinite(1223)) // true
+   
+    // console.log(typeof NaN);
+
+    console.log(Number('12345')); // 12345
+    console.log(parseInt('12345abc')); // 12345
+    console.log(parseInt('a12345abc')); // NaN
+    console.log(Number('12345abc')); // NaN
+
+
+    console.log( +'12345abc' ); // NaN
+    console.log( +'12345' ); // 12345
+    
+
+    Number()
+
+    // console.log(Number.isNaN(NaN)); // true
+    // console.log(Number.isNaN('abc')); // false
+    
+    
+    
+
+
+
+</script>
