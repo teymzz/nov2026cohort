@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="inputField1">
+    <button onclick="getValue()">Submit</button>
+
+    <div id="field">My name is Tayo</div>
+    
+</body>
+</html>
+<script>
+    // Math methods: sqrt() 
+    console.log(Math.sqrt(64));
+    console.log(Math.cbrt(27));
+    console.log(Math.pow(2, 3)); // 8
+    console.log(Math.round(2.5)); // 3
+    console.log(Math.round(2.4)); // 3
+    // let number = 23.456;
+
+    console.log(Math.floor(23.999));
+
+    // console.log(23.000001);
+    
+    console.log(Math.ceil(23.00000)); // 23
+    console.log(Math.ceil(23.5999)); // 24
+
+    // document.getElementById('inputField1') // pointing to the input field
+    let myInputField1 = document.getElementById('inputField1')
+    
+    console.log(myInputField1);
+
+    console.log(myInputField1.value);
+    // console.log(myInputField2.value); //
+
+    // select, input, textarea
+
+    let myBox = document.getElementById('field');
+
+    console.log(myBox.innerHTML);
+    
+    // Math.random(); // 0 - 0.9999
+    let randomNumber = Math.random();
+    let mutiplication = randomNumber * 8  // 0 - 7.9999
+    let randomRange = Math.ceil(mutiplication) // 0 - 8
+     
+    console.log(randomNumber, mutiplication, randomRange);
+
+    // 0 - 10
+    let mutiplication1 = randomNumber * 10  // 0 -9 .9999
+    let randomRange1 = Math.ceil(mutiplication1) // 0 - 10
+
+    // 1 - 10 
+    let mutiplication3 = randomNumber * 9 // 0 - 8.9999
+    mutiplication3 = mutiplication3 + 1 // 1 - 9.9999
+
+    // Task to Generate a number within the range of 1 - 10 using Math.floor() 
+    let number = randomNumber * 10; // 0 - 9.999 
+
+    number = number + 1 // 1 - 10.99999
+    number = Math.floor(number) // 1 - 10
+
+    function getValue() {
+    
+        console.log(myInputField1.value);
+        
+    }
+</script>

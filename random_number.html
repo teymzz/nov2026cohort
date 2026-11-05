@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="inputField1">
+    <input type="text" id="inputField2">
+    <button onclick="getValue()">Submit</button>
+    
+</body>
+</html>
+
+<script> 
+
+    let myInputField1 = document.getElementById('inputField1')
+
+    function getValue() {
+    
+        let userInput = myInputField1.value; 
+        console.log(Number(userInput));
+        
+    }
+
+    // let randomNumber = Math.random() // 0 - 0.9999 
+
+    // let mutiplication3 = randomNumber * 9 // 0 - 8.9999 
+    // mutiplication3 = mutiplication3 + 1 // 1 - 9.9999
+
+
+    // console.log(Math.ceil(mutiplication3));
+    
+
+</script>
