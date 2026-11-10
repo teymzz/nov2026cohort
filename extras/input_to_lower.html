@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="textField"> 
+    <button onclick="convert()">Convert to Lower case</button>
+    <div id="output"></div>
+    
+</body>
+</html>
+<script>
+
+    function convert() {
+
+        let inputField = document.getElementById('textField')
+        let inputValue = inputField.value; 
+        
+        let inputLowerCase = inputValue.toLowerCase();
+
+        let outputField = document.getElementById('output')
+
+        outputField.innerHTML = inputLowerCase
+
+    }
+
+</script>
