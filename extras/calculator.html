@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: grid;
+            place-items: center;
+        }
+        .calculator-pane {
+            padding: 20px;
+            width: 90%;
+            height: 100vh;
+            button{
+                outline: none;
+                border: none;
+            }
+            .calculator{
+                box-shadow: 0 0 12px 0 rgb(104, 104, 104);
+                width: fit-content;
+                padding: 2em;
+                background-color: #263a4e;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                color: white;
+                --sub-padding: 7px;
+                .input-field{
+                    padding: 2px;
+                    display: flex;
+                    align-items: center;
+                    flex: 1;
+                    gap: 20px;
+                    input, #result{
+                        box-shadow: 0 0 12px 0 inset #000;
+                        color: #babaff;
+                        border: none;
+                        outline: none;
+                        width: 100%;
+                    }
+                    #operator{
+                        display: grid;
+                        place-items: center;
+                        font-size: 14px;
+                        color: #babaff;
+                        border-radius: 20px;
+                        font-family: calibri;
+                        > * {
+                            width: 20px;
+                            height: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+                .operators{
+                    display: flex;
+                    gap: 13px;
+                    padding-inline: var(--sub-padding);
+    
+                    button{
+                        padding: 2px;
+                        width: 45px;
+                        background-color: rgb(4, 38, 104);
+                        box-shadow: 0 0 26px 0 inset #7784ab;
+                        outline: solid 2px #0b1727;
+                        outline-offset: 2px;
+                        border-radius: 5px;
+                        border: none;
+                        color: white;
+                        transition: all .2s ease-in-out;
+                        cursor: pointer;
+                    }
+                    button:active{
+                        opacity: .5;
+                    }
+                    button.selected{
+                        background-color: #223054;
+                        box-shadow: 0 0 12px 0 inset #1d1b36;
+                        color: #a04bda;
+                        outline: solid 2px #5f1c97;
+                    }
+                }
+                input, #result {
+                    border: none;
+                    background-color: rgb(38, 69, 99);
+                    border-radius: 5px;
+                    color: white;
+                    padding: 10px;
+                    width: 100%
+                }
+                .screen{
+                    display: flex;
+                    padding-inline: 2px;
+                    gap: 1em;
+                    input {
+                        box-shadow: 0 0 12px 0 inset #000;
+                        cursor: not-allowed;
+                    }
+                }
+                
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator-pane">
+        <div class="calculator">
+            <div class="input-field">
+                <input type="text" placeholder="0" id="numField1">
+                <div id="operator"><span id="show">?</span></div>
+                <input type="text" placeholder="0" id="numField2">
+            </div>
+            <div class="operators">
+               <button onclick="divide()">/</button>
+               <button id="mul" onclick="multiply()">*</button>
+               <button id="add" onclick="add()">+</button>
+               <button id="sub" onclick="subtract()">-</button>
+               <button id="mod" onclick="modulus()">%</button>
+               <button id="pow" onclick="raisePower()">^</button>
+            </div>
+            <div class="screen" id="result">
+                <!-- <input type="text" id="screen" class="display" disabled> -->
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+
+    let numField1 = document.getElementById('numField1')
+    let numField2 = document.getElementById('numField2')
+    let resultScreen = document.getElementById('result')
+    let operator =  document.getElementById('show')
+
+    function divide(){
+        let num1 = +numField1.value;
+        let num2 = +numField2.value;
+
+        let result = num1 / num2
+        resultScreen.innerHTML = result
+        show.innerHTML = '/'
+    }
+
+    function multiply(){
+        let num1 = +numField1.value;
+        let num2 = +numField2.value;
+
+        let result = num1 * num2
+        resultScreen.innerHTML = result
+           show.innerHTML = 'x'
+    }
+
+    function add(){
+        let num1 = +numField1.value;
+        let num2 = +numField2.value;
+
+        let result = num1 + num2
+        resultScreen.innerHTML = result
+           show.innerHTML = '+'
+    }
+
+    function subtract(){
+        let num1 = +numField1.value;
+        let num2 = +numField2.value;
+
+        let result = num1 - num2
+        resultScreen.innerHTML = result
+           show.innerHTML = '-'
+    }
+
+    function modulus(){
+        let num1 = +numField1.value;
+        let num2 = +numField2.value;
+
+        let result = num1 % num2
+        resultScreen.innerHTML = result
+           show.innerHTML = '%'
+    }
+
+    function raisePower(){
+        let num1 = +numField1.value;
+        let num2 = +numField2.value;
+
+        let result = num1 ** num2
+        resultScreen.innerHTML = result
+           show.innerHTML = '^'
+    }
+    
+      
+
+
+</script>

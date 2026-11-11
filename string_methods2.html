@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let string1 = '   This is sentence     one   '; 
+
+    /// split(), concat(), indexOf(), trim(), toLowerCase, match, search, slice, substr, substring, startsWith, endsWith, includes, replace, repeat 
+
+    console.log(string1);
+    console.log(string1.trimLeft()); // or trimStart()
+    console.log(string1.trimRight()); // or trimEnd()
+
+    console.log(string1.trimLeft().trimRight()); //
+    console.log(string1.trim()); //
+
+    /// split 
+
+    let string2 = 'This is sentence two'; 
+    console.log(string2.split()); // ['This is sentence two']
+    console.log(string2.split(' '));
+
+    
+    let string3 = 'This is sentence  three'; 
+    
+    console.log(string3.split('  '));
+    
+    let string4 = 'This is a book given to me by my brother'; // ['This is a', 'given to me by my brother']
+
+    console.log(string4.split(' book '));
+
+    let string5 = 'This book was given to me by my brother'
+
+
+    console.log(string5.split('o'));
+    console.log(string5.split(''));  
+
+    // Subtring 
+
+    let ourSentence = 'Olamideola'
+
+    console.log(ourSentence.substring(3, 7));
+    console.log(ourSentence.substring(3));
+    
+
+
+
+
+
+    
+
+</script>
