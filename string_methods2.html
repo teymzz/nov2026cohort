@@ -46,8 +46,56 @@
 
     let ourSentence = 'Olamideola'
 
-    console.log(ourSentence.substring(3, 7));
-    console.log(ourSentence.substring(3));
+    console.log(ourSentence.substring(3, 7)); // mide
+    console.log(ourSentence.substring(3)); // mideola
+    
+    console.log(ourSentence.substring(5, -1)); // Olami
+
+
+    // Substr 
+    console.log(ourSentence.substr(3, 4)); // mide
+    console.log(ourSentence.substr(3, 5)); // mideo
+
+    console.log(ourSentence.substr(-1)); // a
+    console.log(ourSentence.substr(-5)); // deola
+    console.log(ourSentence.substr(-5, 3)); // deo
+
+    // Slice 
+    console.log(ourSentence.slice(0, 5)); // Olami
+    console.log(ourSentence.slice(3));
+    console.log(ourSentence.slice(3, 4)); // m
+    console.log(ourSentence.slice(-4, 9)); // eol
+
+    // replace 
+
+    let ourString = 'This is a fine book given to me by my friend'
+
+    console.log(ourString);
+    console.log(ourString.replace(' book', 'novel'));
+    console.log(ourString.replace(' class', 'novel'));
+
+    // Task: replace all words named 'book' in this sentence below to novel 
+
+    let sentence = 'This book given to me by my Mother is a very nice BOOK. It is one of the books I would love to have in my library' 
+
+    // exptected result: 'This novel given to me by my mother is a very nice novel. It is one of the novels I would love to have in my library'
+
+    sentence = sentence.replace('book', 'novel').replace('BOOK', 'novel').replace('books','novels').replace('Mother','mother')
+
+    console.log(sentence); // This novel given to me by my mother is a very nice novel. It is one of the novels I would love to have in my library
+
+
+    let sentence2 = 'This book is a very nice book';
+
+    console.log(sentence2.replace('book', 'novel').replace('book','novel'));
+    console.log(sentence2.replaceAll('book', 'novel'));
+    
+    
+    
+
+
+
+
     
 
 
