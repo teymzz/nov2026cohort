@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="filter.css">
+</head>
+<body>
+    <div class="filter-pane">
+        <div class="header">
+            <div class="main">*Words Censor</div>
+            <div class="sub">
+                This simple app helps to filters the words "Crazy, Shit, Imecile, Stupid"
+            </div>
+        </div>
+        <div class="form-area">
+            <div class="">
+                <div class="flag-area">
+                    <div id="flags"></div>
+                </div>
+                <div class="input">
+                    <textarea id="sentence" rows="5"></textarea>
+                    <button class="filter" onclick="filter()">Filter</button>
+                </div>
+            </div>
+            <div id="screen">
+                <div id="response">
+                    <div class="censored">*Censored</div>
+                    <div id="message">This</div>
+                </div>
+            </div>
+            <!-- <div class="">
+                <div class="">Sentence sample</div>
+                <div class="">
+                    This is a crazy shit censor application. I mean, why exactly will someone just decide 
+                    to censor my comments? They are just a bunch of stupid and idiotic imbecile bastards!
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <script>
+    
+        let sentence = document.getElementById('sentence');
+
+        function filter() {
+
+           let value = sentence.value; 
+
+            value= value.replaceAll('crazy','cr*zy').replaceAll('shit','sh*t').replaceAll('imbecile','imbec*le').replaceAll('stupid','stup*d')
+            
+            message.innerHTML = ` 
+             <div>${value}</div>
+             `
+
+             let screen = document.getElementById('screen');
+
+             screen.style.display = 'block'
+             screen.style.backgroundColor = 'red'
+        }
+
+        //    console.log(value.replace(/crazy/ig, "crzy"));
+           
+        // let crazy = document.getElementById('crazy');
+        // let shit = document.getElementById('shit');
+        // let stupid = document.getElementById('stupid');
+        // let imbecile = document.getElementById('imbecile');
+        // let bastard = document.getElementById('bastard');
+        // let idiot = document.getElementById('idiot');
+        // let allCheckers = document.getElementById('all');
+
+        // function allChecks(){
+        //     if(allCheckers.checked){
+        //         crazy.checked =  shit.checked = stupid.checked = imbecile.checked = bastard.checked = idiot.checked = false;
+        //     }else{
+        //         crazy.checked =  shit.checked = stupid.checked = imbecile.checked = bastard.checked = idiot.checked = true;
+        //     }
+        // }
+        // function filter() {
+
+        //     let inputFlags = flags.value;
+        //     let censoredText = sentence.value
+
+        //     if(crazy.checked) censoredText = censoredText.replaceAll('crazy','cra<span class="asterisk">*</span>y');
+        //     if(shit.checked) censoredText = censoredText.replaceAll('shit','sh<span class="asterisk">*</span>t');
+        //     if(stupid.checked) censoredText = censoredText.replaceAll('stupid','stup<span class="asterisk">*</span>d');
+        //     if(imbecile.checked) censoredText = censoredText.replaceAll('imbecile','imbec<span class="asterisk">*</span>le');
+        //     if(bastard.checked) censoredText = censoredText.replaceAll('bastard','bast<span class="asterisk">*</span>rd');
+        //     if(idiot.checked) censoredText = censoredText.replaceAll('idiot','idi<span class="asterisk">*</span>t');
+            
+        //     screen.style.display = 'block'
+        //     messageField.innerHTML = censoredText;
+
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(37, 29, 37);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+.filter-pane{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding:20px;
+    width: 90%;
+    margin: auto;
+    background-color: rgb(14, 11, 14);
+    .header{
+        font-size: 30px;
+        font-family: calibri;
+        color: rgb(255, 21, 21);
+        .sub {
+            font-size: 12px;
+            color: #ecdee8;
+        }
+    }
+    .form-area {
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+        --theme-color : #8f0310;
+        .flag-area{
+            border: solid var(--theme-color) 1px; 
+            border-bottom: none;
+            padding: 10px;
+            #flags {
+                display: flex;
+                gap: 1em;
+                width: 100%;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: rgb(255, 77, 77);
+                input[type="checkbox"] {
+                    display: none;
+                }
+                .mark{
+                    display: flex;
+                    align-items: center;
+                    gap: 2px;
+                    font-family: calibri;
+                    padding: 3px 7px;
+                    background: #211e1e;
+                    color: #c7baba;
+                    .checkbox{
+                        border: solid 1px #9b9494;
+                        width: fit-content;
+                        padding: 2px;
+                        border: solid 1px;
+                        .marker{
+                            width: 8px;
+                            height: 8px;
+                        }
+                    }
+                    label:nth-child(2) {
+                        cursor: pointer;
+                    }
+                    label:nth-child(2):active {
+                        border-color: rgb(112, 112, 112);
+                    }
+                    label:nth-child(3) {
+                        font-size: 14px;
+                        cursor: pointer;
+                    }
+                    label:nth-child(3):active {
+                        opacity: .4;
+                    }
+                }
+                .mark:has(:checked){
+                    .checkbox{
+                        border: solid 1px #4a2222;
+                        .marker{
+                            background-color: #ad0010;
+                        }
+                    }
+                }
+                .mark.all {
+                    background: #8f0310;
+                    border-radius: 1px;
+                    .checkbox{
+                        border: solid 1px #9a8c8c;
+                    }
+                }
+                .mark.all:has(:checked) {
+                    .checkbox{
+                        border: solid 1px #da0202;
+                        .marker{
+                            background: #f20000;
+                        }
+                    }
+                }
+            }
+        }
+        .input {
+            padding: 6px;
+            display: flex;
+            gap: 1em;
+            border: solid 1px var(--theme-color);
+            #sentence{
+                width: 90%;
+                border: none;
+                background-color: rgba(255, 255, 255, 0);
+                outline: none;
+                padding: 2px 0;
+                color: white;
+            }
+            button{
+                outline: none;
+                border: none;
+                padding: 10px;
+                background-color: #8f0310;
+                color: rgb(255, 255, 255);
+            }
+        }
+    }
+    #screen{
+        display: none;
+        font-family: verdana;
+        font-size: 12px;
+        background: rgb(39, 36, 39);
+        padding: 20px;
+        #message{
+            color: #a9a49b;
+        }
+        #response {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            .censored {
+                color: #ece2e2;
+                padding: 10px;
+                border-radius: 20px;
+                width: fit-content;
+                background: #9a1d29;
+            }
+            #message {
+                padding: 10px 5px;
+                .asterisk{
+                    color:#f00;
+                }
+            }
+            #message + * {
+                color: rgb(224, 209, 219);
+            }
+        }
+    }
+}
+@media (min-width: 900px) {      
+    .form-area {
+        max-width: 545px;
+    }
+}
