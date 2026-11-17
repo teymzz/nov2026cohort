@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="numField1">
+    <input type="text" id="numField2">
+    <button onclick="testNumber()">Submit</button>
+    <div id="output"></div>
+    
+</body>
+</html>
+<script>
+    // if, else, switch, tenary 
+
+    if (5 > 3) {
+        console.log('This code 1 ran successfully');
+        
+    }
+    if (3 > 5 || 7 < 6) {
+        console.log('This code 2 ran successfully');
+    }
+    if (5 > 3) {
+        console.log('Five is greater than Three');
+    }else{
+        console.log('Five is less than Three');
+    }
+    if (3 > 5) {
+        console.log('Three is greater than Five');
+    }else{
+        console.log('Three is less than Five');
+    }
+
+        // console.log(+'                 ');
+    function testNumber() {
+
+        let inputField1 = document.getElementById('numField1') // input
+        let inputField2 = document.getElementById('numField2') //input
+        let outputField = document.getElementById('output') // div
+
+        let inputValue1 = inputField1.value.trim() // ''
+        let inputValue2 = inputField2.value.trim()
+        
+        if(inputValue1 === ''){
+
+            outputField.innerHTML = `Please enter a real value in field 1`
+
+        }else if (inputValue2 === ''){
+
+            outputField.innerHTML = `Please enter a real value in field 2`
+
+        }else{
+
+            inputValue1 = +inputValue1
+            inputValue2 = +inputValue2
+
+            if(inputValue1 > inputValue2){
+
+                outputField.innerHTML = `${inputValue1} is greater than ${inputValue2}`
+
+             }else if(inputValue1 < inputValue2){
+
+            outputField.innerHTML = `${inputValue1} is lesser than ${inputValue2}`
+
+            }else if(inputValue1 === inputValue2){
+
+                outputField.innerHTML = `${inputValue1} is equal to ${inputValue2}`
+
+            }else{
+
+                outputField.innerHTML = `Something is wrong`
+
+            }
+        }
+    
+
+        
+
+
+        // if(inputValue1 > inputValue2){
+        // }else if(inputValue1 < inputValue2){
+        //     outputField.innerHTML = `${inputValue1} is lesser than ${inputValue2}`
+        // }else if(inputValue1 == inputValue2){
+        //     outputField.innerHTML = `${inputValue1} is equal to ${inputValue2}`
+        // } else{
+        //     // outputField.innerHTML = `${inputValue2} is greater than ${inputValue1}`
+        //     outputField.innerHTML = `Something is wrong`
+        // }
+
+
+
+        
+        
+        
+        
+
+        
+    }
+
+    
+        // let inputValue1 = +inputField1.value
+        // let inputValue2 = +inputField2.value
+        
+        // let outputField = document.getElementById('output'); 
+
+        // if(inputValue1 > inputValue2){
+        //     outputField.innerHTML = `${inputValue1} is greater than ${inputValue2}`
+        // }else{
+        //     outputField.innerHTML = `${inputValue1} is less than ${inputValue2}`
+        // }
+</script>
