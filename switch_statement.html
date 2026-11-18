@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="inputField">
+    <button onclick="check()">Check value</button>
+    
+</body>
+</html>
+<script>
+
+// switch (key) {
+//     case value:
+        
+//         break;
+
+//     case value:
+        
+//         break;
+
+//     default:
+//         break;
+// }
+
+function check() {
+
+    let userInput = document.getElementById('inputField').value.trim().toLowerCase(); 
+
+    // console.log(value);
+    
+    switch(true){
+
+        case (userInput === 'sola') : 
+           console.log('Welcome, Mr Sola')
+        break; 
+
+        case (userInput === 'bayo') : 
+           console.log('Welcome, Mr Bayo')
+        break; 
+
+        case (userInput === 'admin') : 
+           console.log('Welcome, Admin')
+        break; 
+
+        default: 
+            console.log(`The user "${userInput}" is unknown`) 
+            break;
+    }
+
+}
+
+// switch(true) {
+
+//     case 2 > 3 : 
+//        console.log(' 2 is greater than 3 '); 
+//     break;
+
+//     case 3 > 2 : 
+//        console.log(' 3 is greater than 2'); 
+//    break;
+
+// }
+
+</script>
