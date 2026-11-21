@@ -6,26 +6,41 @@
     <title>Document</title>
 </head>
 <body>
+
+    <input type="text" id="user">
+    <button onclick="checkUser()">Submit</button>
     
 </body>
 </html>
  
-<!-- (condition)? 'true' : 'false' -->
 
 <script>
+ // (condition)? 'true' : 'false'
+ // (condition)? ((condition)? 'true' : 'false')  : 'false'
+ // (condition)? true  :  ((condition)? 'true' : 'false')
+ // (condition)? ((condition)? 'true' : 'false')  :  ((condition)? 'true' : 'false')
 
-let userName = 'bola'
-let firstname = 'Fred';
+ function checkUser() {
+    let welcomeMessage = 'Welcome, '; 
+    let userPerson = user.value.trim() === 'sola' ? 'admin' : 'user' ;
+    
+    welcomeMessage += userPerson; 
 
-let greetings = (userName === 'bola')? "Welcome, bola" : "Welcome, user"; 
+    console.log(welcomeMessage);
+ }
 
-console.log(greetings); // Welcome, Bola
+// let userName = 'bola'
+// let firstname = 'Fred';
+
+// let greetings = (userName === 'bola')? "Welcome, bola" : "Welcome, user"; 
+
+// console.log(greetings); // Welcome, Bola
 
 
 
-greetings = (userName === 'bola')? (firstname === 'Fred'? 'Bola Fred' : 'Bola User')  : "Welcome, user"; 
+// greetings = (userName === 'bola')? (firstname === 'Fred'? 'Bola Fred' : 'Bola User')  : "Welcome, user"; 
 
 
-greetings = (userName === 'tayo')? (firstname === 'Fred'? 'Bola Fred' : 'Bola User')  : "Welcome, user"; 
+// greetings = (userName === 'tayo')? (firstname === 'Fred'? 'Bola Fred' : 'Bola User')  : "Welcome, user"; 
 
 </script>

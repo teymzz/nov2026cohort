@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number" id="weight" placeholder="weight (kg)">
+    <input type="number" id="height" placeholder="height (m)">
+    <input type="button" value="calculate bmi" onclick="calculateBMI()">
+    
+</body>
+</html>
+<script>
+
+
+
+//     console.log(Number.isNaN(NaN));
+//     console.log(Number.isNaN(+'ade'));
+
+//     console.log(isNaN('ade'));
+//     console.log(isNaN('123'));
+    
+    
+//    // isNaN()
+
+function calculateBMI(){
+
+    let weightElement = document.getElementById('weight')
+    let heightElement = document.getElementById('height')
+
+    let weightValue = weightElement.value.trim()
+    let heightValue = heightElement.value.trim()
+
+    // if(weightValue === '' || heightValue === ''){
+    //     console.log('Please enter a valid value in both field');
+    // }
+
+    if(weightValue === ''){
+        console.log('Please enter a valid weight');
+    }else if(heightValue === ''){
+        console.log('Please enter a valid height');
+    }else if(isNaN(weightValue)){
+        console.log('Weight value is not a valid number');
+    }else if (isNaN(heightValue)){
+        console.log('Height value is not a valid number');
+    }else{
+        let weight = +weightValue
+        let height = +heightValue
+
+        let bmi = weight / (height * height)
+    
+        if(bmi < 18.5){
+            console.log('underweight');
+        }else if(bmi <= 24.9){
+            console.log('normal weight');
+        }else if ( bmi <= 29.9) {
+            console.log('overweight');
+        }else{
+            console.log('obese');
+        }
+    }
+
+
+    
+
+}
+
+
+// - Body mass index(BMI) is calculated as follows: bmi = weight in Kg / (height x height) in m2. Write a function which calculates bmi. BMI is used to broadly define different weight groups in adults 20 years old or older.Check if a person is underweight, normal, overweight or obese based the information given below.
+
+// The same groups apply to both men and women.
+// Underweight: BMI is less than 18.5
+// Normal weight: BMI is 18.5 to 24.9
+// Overweight: BMI is 25 to 29.9
+// Obese: BMI is 30 or more
+
+
+</script>
