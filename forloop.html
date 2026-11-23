@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="inputField"><button onclick="generateTable()">Submit</button>
+    
+</body>
+
+</html>
+
+<script>
+
+    function generateTable() {
+
+        let inputElement =  document.getElementById('inputField'); 
+        let inputValue = inputElement.value.trim(); 
+
+        if(inputValue){
+            // console.log(inputValue);
+
+            if(isNaN(inputValue)){
+                console.log('Please enter a valid number');
+            } else {
+                inputValue = Number(inputValue); 
+
+                for(let i = 1; i <= 12; i++){
+                    
+                    console.log(`${inputValue} * ${i} = ${inputValue * i}`);
+                    
+                    
+                }
+
+            }
+
+        }else{
+            console.log('Please enter a valid value');
+            
+        }
+
+        
+
+
+
+    }
+
+</script>
