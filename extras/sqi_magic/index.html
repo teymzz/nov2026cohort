@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="magic.css">
+</head>
+<body>
+    <div class="guessing-game">
+        <div class="header">
+            <div class="main">*Magic number game</div>
+            <div class="sub">
+                Trust you can guess the magic number from 1 - 10 correctly? Try this out!
+            </div>
+        </div>
+        <div class="form-area">
+            <div class="input">
+                <input id="input" min="1" max="10" maxlength="2"> 
+                <button onclick="checkNumber()">Guess</button>
+            </div>
+            <div id="screen">
+                <div id="response">
+                    <div id="message"></div>
+                    <div id="magic">The magic number is: <span id="answer" class="answer"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        let inputElement = document.getElementById('input'); 
+
+        let numberOfTries = 0;
+        
+
+        function checkNumber() {
+
+
+            let inputValue = inputElement.value.trim();  //
+
+            if(inputValue) {
+
+                if(isNaN(inputValue)){
+                    document.getElementById('screen').style.display = 'block'
+                    message.innerHTML = 'Please enter a valid number';
+                }else{
+
+                    inputValue = +inputValue; 
+                    numberOfTries++
+                    let randomNumber = Math.floor(Math.random() * 10) + 1 // 1- 10 
+                    
+
+                    if(inputValue === randomNumber){
+                        message.innerHTML = `You guessed right! Total number of tries is ${numberOfTries}`;
+
+                        document.getElementById('screen').style.display = 'block'
+                        document.getElementById('magic').style.display = 'block'
+
+                        document.getElementById('answer').innerHTML = randomNumber
+                    }else{
+                         document.getElementById('screen').style.display = 'block'
+                        message.innerHTML = `You guessed wrong, the magic number is ${randomNumber}`;
+                        
+                        document.getElementById('answer').innerHTML = randomNumber
+                    }
+                    
+                }
+
+            }else{
+                document.getElementById('screen').style.display = 'block'
+                message.innerHTML = 'Please enter a valid number';
+            }
+
+
+
+        }
+    </script>
+</body>
+</html>
