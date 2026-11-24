@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width:200px; 
+            height: 200px; 
+            color: white; 
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="count"> <button onclick="generateColors()">Generate Color</button>
+    
+    <div id="color_field"></div>
+
+</body>
+</html>
+
+<script>
+
+    // NaN
+    // undefined
+    // false
+    // null 
+    // void
+    // On 
+    // 0
+    // ''
+
+
+    // '0'
+    // +'0'  // 0
+    // +'       ' // 0
+
+    console.log(!''); // true
+    console.log(!' '); // fals
+    
+    function generateColors() {
+
+        let countField = document.getElementById('count'); 
+        let count = countField.value.trim() // '' 
+
+        if(count) {
+
+            if(isNaN(count)){
+                alert('Please enter a valid number')
+            }else{
+                count = +count; 
+
+                if(count < 1){
+                    
+                        alert('Please enter a number that is greater than zero')
+
+                }else {
+
+                    let content = '' 
+
+                    for (let index = 1; index <= count; index++) {
+                       
+                        // rgb(0, 0 ,0) 0 - 255
+
+                        let r = Math.floor(Math.random() * 256); 
+                        let g = Math.floor(Math.random() * 256); 
+                        let b = Math.floor(Math.random() * 256); 
+
+                        let rgbColor = `rgb(${r}, ${g}, ${b})`
+
+                        content += `<div class="box" style="background-color:${rgbColor}">${rgbColor}</div>`;
+
+                        // console.log(rgbColor);
+                        
+                        
+                    }
+
+                  let colorField = document.getElementById('color_field')
+
+                  colorField.innerHTML = content
+
+
+
+
+                }
+
+            }
+
+        }else{
+            alert('please enter a valid input')
+        }
+/* 
+        if( !count ){
+            // if nothing was typed
+        }else{
+             // if something was typed
+        }
+
+        if(count){
+            // if something was typed
+        }else{
+            //  if nothing was typed
+        }
+
+
+        if(count === ''){
+            //  if nothing was typed
+        } */
+
+       
+
+        
+
+
+        
+        
+
+    }
+</script>

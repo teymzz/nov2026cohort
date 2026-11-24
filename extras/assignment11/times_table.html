@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .items {
+            padding: 10px; 
+            background-color: brown;
+            color: white; 
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="inputField"><button onclick="generateTable()">Submit</button>
+
+    <div id="result"></div>
+    
+</body>
+
+</html>
+
+<script>
+
+    let name = 'ade'
+    
+    console.log(name); // ade
+
+    // name += 'bola';
+    name = name + 'bola'
+
+    console.log(name);// adebola
+    
+
+    function generateTable() {
+
+        let inputElement =  document.getElementById('inputField'); 
+        let resultField =  document.getElementById('result'); 
+        let inputValue = inputElement.value.trim(); 
+
+        if(inputValue){
+            // console.log(inputValue);
+
+            if(isNaN(inputValue)){
+                resultField.innerHTML = 'Please enter a valid number';
+            } else {
+                inputValue = Number(inputValue); 
+
+                let myItems = ''
+
+                myItems += `<div class='items'>`;
+                myItems += `<h1>${inputValue} Times Table</h1>`;
+
+                for(let i = 1; i <= 12; i++){
+                    
+                   myItems += `<div class="content"> ${inputValue} * ${i} = ${inputValue * i} </div>`;
+                    
+                    
+                }
+
+                myItems +=   ` </div>`;
+
+                resultField.innerHTML = myItems
+
+            }
+
+        }else{
+            resultField.innerHTML = 'Please enter a valid value';
+            
+        }
+    }
+
+</script>
