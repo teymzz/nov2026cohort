@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div id="output"></div>
     
 </body>
 </html>
@@ -38,6 +40,89 @@ let array5 = [30, true, [], NaN, undefined, false,'sola','bayo','kemi']
 console.log(array5.length);
 console.log(array5[0]); // 30
 console.log(array5[5]); // false
+
+// let array6 = [8];
+// let array7 = new Array(8);
+
+
+let name2 = 'sola'.split('');
+
+console.log(name2[0]); // s
+'sola'[0] // s 
+
+console.log('sola'.indexOf('o'));
+
+let users = ['sola','bayo','kemi','tomi','bayo', 'tola', 'bayo', 'segun', 'kola']; 
+
+ console.log(users.indexOf('bayo')); // 1
+ console.log(users.indexOf('tomi')); // 3
+
+ console.log(users.lastIndexOf('bayo')); // 6 
+
+    //  - push
+    // - index
+    // - indexOf
+    // - lastIndexOf
+    // - length
+    // - toString
+    // - join
+    // - slice
+    // - splice
+    // - pop
+    // - shift
+    // - unshift
+
+    let languages = ['Finnish']; 
+
+    languages.push('English')
+
+    console.log(languages);
+
+    languages.push('Yoruba')
+    languages.push('Latin')
+    languages.push('French')
+    
+    console.log(languages);
+    
+    languages.unshift('Portugese')
+    console.log(languages); // ['Portugese', 'Finnish', 'English', 'Yoruba', 'Latin', 'French']
+
+    let removedItem1  = languages.pop(); // remove French
+    console.log(languages, removedItem1);
+
+    let removedItem2  = languages.pop(); // remove Latin
+
+    console.log(languages, removedItem2); // 
+
+    let removedItem3 = languages.shift();  // remove Portugese
+
+    console.log(removedItem3, languages);
+
+
+    let codeLanguages = ['Python','Rust','Javascript','PHP','Django','Java']; 
+
+    let outputField = document.getElementById('output')
+
+
+    for(let i = 0; i < codeLanguages.length; i++){
+
+        outputField.innerHTML += codeLanguages[i] + '<br>';
+    
+    }
+
+
+    
+
+
+  
+
+
+
+
+
+
+
+
 
 
 </script>
